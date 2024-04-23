@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <h1 id="name">Functions</h1>
+</body>
+    <script>
+        //create a function that alert good morning
+        // function bonjour() {
+        //     alert('Good Morning')
+        // }
+
+        // function bonjour(name='There') {
+        //     alert(`Good Morning ${name}`)
+        // }
+
+        // bonjour()
+        // bonjour('BlarQ')
+        // bonjour('Damola')
+
+        function greeting(name, time) {
+            return `Hello ${name}, ${time}`
+        }
+
+        let message = greeting('BlarQ', 'Good Evening')
+
+        document.getElementById('name').innerHTML = message
+
+        function add(x,y){
+            return x + y
+        }
+
+        function square(x){
+            return Math.pow(x, 2)
+        }
+
+        function cube(x){
+            return Math.cbrt(x)
+        }
+        let cubic = cube(64).toFixed(3)
+        
+        console.log(cubic)
+        
+
+    </script>
+</html>
