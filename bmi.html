@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+
+<style>
+    body {
+        background-color: #ddd;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100svh;
+    }
+    main{
+        height: 70vh;
+        width: 70%;
+        background-color: #fff;
+        border-radius: 25px;
+        box-shadow: 0 0 30px blue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    h1{
+        text-transform: uppercase;
+        font-family: 'Lucida Sans', sans-serif;
+        color: blue;
+        text-shadow: 0 0 15px gray;
+    }
+    input{
+        outline: none;
+        border: 7px double blue;
+        padding: 10px;
+        width: 50%;
+        border-radius: 30px;
+        max-width: 10%;
+    }
+
+    label{
+        font-family: 'Lucida Sans', sans-serif;
+        color: blue;
+        text-shadow: 0 0 15px gray;
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: -80px;
+        margin-bottom: 10px;
+    }
+
+    p{
+        color: blue;
+        font-size: 2rem;
+        padding: 10px 0;
+        font-style: italic;
+    }
+</style>
+<body>
+
+    <h1>Body Mass Index Calculator</h1>
+
+    <label for="num">Weight:</label>
+    <input type="number" name="num" id="numW" placeholder="Input Weight"> <br><br>
+
+    <label for="num">Height:</label>
+    <input type="number" name="num" id="numH" placeholder="Input Height">
+
+    <p id="bmiResult"></p>
+    <p id="advice"></p>
+    
+</body>
+
+<script>
+    const numH = document.getElementById('numH')
+    const numW = document.getElementById('numW')
+    const bmiResult = document.getElementById('bmiResult')
+    const advice = document.getElementById('advice')
+
+    const calculateBMI = () => {
+        const weight = numW.value
+        const height = numH.value
+        const bmiValue = weight / ((height / 100) **2 )
+        
+        if(bmiValue < 18.5) {
+            advice.textContent = 'You are Underweight'
+        } else if (bmiValue <= 24.9) {
+            advice.textContent = 'You are Normal'
+        } else if (bmiValue <= 29.9) {
+            advice.textContent = 'You are Overweight'
+        } else {
+            advice.textContent = 'You are Obese'
+        }
+        bmiResult.textContent = bmiValue.toFixed(2)
+    }
+
+    // numW.addEventListener('change', calculateBMI)
+    numH.addEventListener('change', calculateBMI)
+    
+</script>
+</html>
