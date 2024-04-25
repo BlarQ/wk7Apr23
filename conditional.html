@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conditional statement</title>
+</head>
+<body>
+    
+
+    <script>
+        //arrow functions
+        const sum = (a,b) => a + b
+        const remove = x => x - 5
+        const callMe = () => alert('Hi damola')
+
+        //normal function
+        function add(a,b) {
+            return a + b
+        }
+
+        //conditional statement [if statement]
+        function score(){
+            const val = prompt("add your score")
+            if(val <= 100 && !isNaN(val)){
+
+                if (val >= 70) {
+                    alert('Excellent!')
+                } 
+                else if(val >= 60){
+                    alert('Credit!')
+                } 
+                else if(val >= 50){
+                    alert('Pass!')
+                } 
+                else {
+                    alert('Sorry, you failed!')
+                }
+            } else {
+                alert('Invalid Response!')
+            }
+        }
+
+        score()
+
+    </script>
+</body>
+</html>
